@@ -35,6 +35,29 @@
         </div>
         <button type="submit" class="btn btn-primary">Upload</button>
       </form>
+
+      <!-- Display the summary in a table if available -->
+      {% if summary %}
+      <h3 class="mt-4">Summary Report</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Cust State</th>
+            <th>Cust Pin</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in summary %}
+          <tr>
+            <td>{{ item.Cust_State }}</td>
+            <td>{{ item.Cust_Pin }}</td>
+            <td>{{ item.Count }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% endif %}
     </div>
   </body>
 </html>

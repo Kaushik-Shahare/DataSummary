@@ -20,4 +20,5 @@ class FileSummary(APIView):
             print(e)
             return render(request, 'file_upload/upload.html', {"error": str(e)})
 
-        return render(request, 'file_upload/upload.html', {"success": "Summary computed successfully"})
+        return render(request, 'file_upload/upload.html', {"success": "Summary computed successfully",
+                                                           "summary": summary})
